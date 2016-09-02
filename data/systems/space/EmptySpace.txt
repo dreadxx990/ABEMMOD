@@ -1,5 +1,5 @@
 System: EmptySpace
-	Frequency: 0.05
+	Frequency: 0.01 * $ANOMALY_SYSTEM_FREQ_MULT
 	
 	ExpandSystem(1000)
 	
@@ -8,9 +8,8 @@ System: EmptySpace
 	Repeat(0:2)
 		MakeArtifact()
 	Repeat(0:2)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 	Repeat(0:2)
 		MakeCreepCamp(Offset = 700)
 		
 	AddRegionStatus(EmptySpace)
-	NoRegionVision()

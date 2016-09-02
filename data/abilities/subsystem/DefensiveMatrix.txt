@@ -1,0 +1,12 @@
+Ability: DefensiveMatrix
+	Name: #ABL_DEFENSIVEMATRIX
+	Description: #ABL_DEFENSIVEMATRIX_DESC
+	Icon: techNeutronium * #00aaff
+	Target: targ = Object
+	Range: 500
+	Cooldown: 90
+	Either(TargetFilterFlagship(targ), TargetFilterType(targ, Orbital))
+	TargetFilterAllied(targ)
+	ABEM_hooks::AddOwnedStatus(targ, DefensiveMatrix, Duration = 60)
+	TriggerBeamEffect(targ, 0.25, #063e7b, ShieldTransfer, Width = 0.25)
+	ABEM_hooks::PlayParticlesAtObject(targ, DefensiveMatrixEvent, Scale = 0.5)

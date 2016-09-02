@@ -8,11 +8,10 @@ System: MorphSystem
 		MakePlanet(AsteroidAffinity)
 
 	Repeat(2)
-		MakeAsteroid(AsteroidAffinity)
+		MakeAsteroid(Resource = AsteroidAffinity)
 
 
 	MakeAnomaly(MorphRed)
 	MakeAnomaly(MorphBlue)
 	MakeAnomaly(MorphGreen)
 	AddAdjacentAnomalies(1)
-	NoRegionVision()

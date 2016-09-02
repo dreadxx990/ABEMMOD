@@ -1,10 +1,10 @@
 Subsystem: RemnantArmor
-	Name: Remnant Armor
+	Name: #S_REMNANT_ARMOR
 	BaseColor: #008888
 	Elevation: 1
 
 	Tags: LowMaint, Category:Armor
-	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

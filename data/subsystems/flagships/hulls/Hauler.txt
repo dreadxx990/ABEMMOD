@@ -1,6 +1,6 @@
 Subsystem: Hauler
-	Name: Hauler Hull
-	Description: Transport of ships
+	Name: #S_HAULER_HULL
+	Description: #S_HAULER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore,DefaultUnlock
 	Hull: Flagship
@@ -14,7 +14,7 @@ Subsystem: Hauler
 	AddShipModifier: ShieldCapacityFactor(1.5)
 	AddShipModifier: SupportCapacityFactor(10)
 	AddShipModifier: ArmorHpFactor(1)
-	AddShipModifier: DamageFactor(0.3)
+	AddShipModifier: DamageFactor(0.2)
 	AddShipModifier: MaintCostFactor(0.20)
 	AddShipModifier: SupplyCapacityFactor(0)
 

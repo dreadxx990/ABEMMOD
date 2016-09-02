@@ -2,12 +2,22 @@ Trait: Fling
 	Name: #TRAIT_FLING
 	Description: #TRAIT_FLING_DESC
 	Category: FTL
+	Order: 1
 
 	Icon: GuiOrbitalIcons::2
-
+	Color: #ef8eff
 	Unique: FTL
 
 	UnlockSubsystem(Fling)
 	UnlockTag(HasFling)
-	LoadDesigns(not_hyperdrive)
+
+	LoadDesigns(ABEM_defaults/default)
+	LoadDesigns(ABEM_defaults/not_hyperdrive)
+
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/not_hyperdrive))
+
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
+
 	SpawnOrbital(FlingCore, Free = True)

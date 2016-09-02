@@ -16,15 +16,16 @@ Module: TradeStation
 	Health: 5000
 	Armor: 1000
 
-	Model: Research_Station
-	Material: ResearchStation
+	Model: CommerceStation
+	Material: VolkurGenericPBR
+
+	SetSystemFlag(CommerceStation)
 
 	GrantAbility(BuyInfluence) #version>=93
 	GrantAbility(BuyEnergy) #version>=93
 	GrantAbility(BuyResearch) #version>=93
 	GrantAbility(BuyLabor) #version>=93
 
-	FriendlyPlanetMoney(To Other = 40)
+	FriendlyPlanetMoney(To Other = 60)
 	GiveTrade()
 	GlobalTradeNode()
-	UnlimitedAsteroidSystem()

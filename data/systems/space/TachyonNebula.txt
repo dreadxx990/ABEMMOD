@@ -1,5 +1,5 @@
 System: TachyonNebula
-	Frequency: 0.02
+	Frequency: 0.02 * $ANOMALY_SYSTEM_FREQ_MULT
 	
 	ExpandSystem(1000)
 	
@@ -8,7 +8,7 @@ System: TachyonNebula
 	Repeat(1:4)
 		MakeArtifact()
 	Repeat(1:3)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 	Repeat(0:3)
 		MakeCreepCamp(Offset = 700)
 		

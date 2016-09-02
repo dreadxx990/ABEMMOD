@@ -1,8 +1,10 @@
 Subsystem: SupShieldGen
-	Name: Shield Generator
+	Name: #SHIELDGEN_NAME
 	Description: #S_SUPSHIELD_DESC
 	BaseColor: #0044db
 	Elevation: 1
+
+	DamageOrder: -100
 
 	Tags: IsShield, Defense, Category:Shields, HasInternals
 	Tags: SecondaryDefense
@@ -11,6 +13,7 @@ Subsystem: SupShieldGen
 	Size := HexSize * Hexes
 	ShieldCapacity := Size * 60
 	ShieldRegen := Size * 0.5
+	ShieldHexes := Hexes
 
 	Hex.Resistance := 0.5
 	Hex.HP := 8 * HexSize
@@ -19,8 +22,13 @@ Subsystem: SupShieldGen
 	Assert: Size>=5
 		Message: Support Shield Generator must be at least size 5. Add more hexes to the generator or increase the ship's size.
 
+	Effect: ABEMShieldDamage
+
 	Requires:
 		Command = 1
+
+	Modifier: LaborCostFactor(factor)
+		Hex.LaborCost := 0
 
 	Module: Core
 		Sprite: FissionReactor

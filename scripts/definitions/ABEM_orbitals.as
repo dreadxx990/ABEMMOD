@@ -2,6 +2,8 @@ import hooks;
 import orbitals;
 import generic_effects;
 import traits;
+import statuses;
+import status_effects;
 from orbitals import OrbitalEffect;
 
 #section server-side
@@ -17,7 +19,7 @@ class LimitTwicePerSystem : OrbitalEffect {
 	Argument flag(AT_SystemFlag, doc="System flag to base the limit on. Can be set to any arbitrary unique name.");
 	Argument flag2(AT_SystemFlag, doc="Second system flag to base the limit on. Can be set to any arbitrary unique name.");
 	
-	bool canBuildAt(Object@ obj, const vec3d& pos) const {
+	bool canBuildAt(Object@ obj, const vec3d& pos) const override {
 		auto@ system = getRegion(pos);
 		if(system is null)
 			return false;
@@ -29,7 +31,7 @@ class LimitTwicePerSystem : OrbitalEffect {
 		return true;
 	}
 
-	string getBuildError(Object@ obj, const vec3d& pos) const {
+	string getBuildError(Object@ obj, const vec3d& pos) const override {
 		return "You can only build this orbital twice per system.";
 	}
 
@@ -106,4 +108,21 @@ class LimitTwicePerSystem : OrbitalEffect {
 		}
 	}
 #section all
+}
+
+class ApplyToOwned : StatusHook {
+	Document doc("When this status is added to an object, it only applies if the object is owned by the origin empire.");
+
+#section server
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
+		Empire@ origin = status.originEmpire;
+		if(origin is null)
+			return true;
+		Empire@ owner = obj.owner;
+		if(owner is null)
+			return false;
+
+		return origin is owner;
+	}
+#section all	
 }

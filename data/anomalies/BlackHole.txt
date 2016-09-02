@@ -1,36 +1,50 @@
 Anomaly: BlackHole
-	Name: Crippled Remnant Guardian
+	Name: #A_GUARDIAN
 	Frequency: 0
 	Description: #A_GUARDIAN_UNSCANNED
-	Model: Flagship
-	Material: Flagship
+	Model: TyrantFlagLarge
+	Material: TyrantMedium
 	Narrative: #A_GUARDIAN_UNSCANNED
 	Option: Reactivate
 		Description: #A_GUARDIAN_REACTIVATE
 		Safe: False
 		Icon: Bridge
 		Result: 5%
-			NotifyAll(Guardian Reactivated!, Description = A Guardian has been salvaged along with all of its advanced technology! Destroy the Guardian to set them back at least a little!, Icon = SubsystemButtonArt::6)
-			UnlockSubsystem(RemnantArmor)
-			UnlockSubsystem(RemnantShield)
+			NotifyAll(#A_GUARDIAN_NOTIFY_FIXED, Description = #A_GUARDIAN_NOTIFY_FIXED_DESC, Icon = SubsystemButtonArt::6)
+			UnlockTag(RemnantArmor)
+			UnlockTag(RemnantShield)
+			UnlockTag(ProgenitorComputer)
+			UnlockTag(DroneWeapon)
 			SendMessage(#A_GUARDIAN_FIXED)
 			SpawnDryDock(Guardian, Funding = 0.5, Progress = 0.2, Free = True)
 		Result: 95%
 			SendMessage(#A_GUARDIAN_EXPLODE)
 	Option: RemnantShields
-		Description: Download the schematics for the flagship's advanced shields.
+		Description: #A_GUARDIAN_SHIELD
 		Icon: TechIcons::35*#60ffff
-		NotifyAll(Remnant Shielding Salvaged!, Description = Remnant shield technology has been salvaged from a Guardian!, Icon = TechIcons::35*#60ffff)
-		UnlockSubsystem(RemnantShield)
+		NotifyAll(#A_GUARDIAN_NOTIFY_SHIELD, Description = #A_GUARDIAN_NOTIFY_SHIELD_DESC, Icon = TechIcons::35*#60ffff)
+		UnlockTag(RemnantShield)
 	Option: RemnantArmor
-		Description: Download the data on the flagship's advanced armor.
-		Icon: TechIcons::20*#60ffff
-		NotifyAll(Remnant Armor Salvaged!, Description = Remnant armor technology has been salvaged from a Guardian!, Icon = TechIcons::20*#60ffff)
-		UnlockSubsystem(RemnantArmor)
+		Description: #A_GUARDIAN_ARMOR
+		Icon: Armor4
+		NotifyAll(#A_GUARDIAN_NOTIFY_ARMOR, Description = #A_GUARDIAN_NOTIFY_ARMOR_DESC, Icon = TechIcons::20*#60ffff)
+		UnlockTag(RemnantArmor)
+	Option: RemnantComputers
+		Description: #A_GUARDIAN_COMPUTER
+		Icon: TechIcons::58
+		NotifyAll(#A_GUARDIAN_NOTIFY_COMPUTER, Description = #A_GUARDIAN_NOTIFY_COMPUTER_DESC, Icon = TechIcons::58)
+		UnlockTag(ProgenitorComputer)
+	Option: DroneWeapons
+		Description: #A_GUARDIAN_DRONE
+		Icon: HexagonSubsystems::9
+		NotifyAll(#A_GUARDIAN_NOTIFY_DRONE, Description = #A_GUARDIAN_NOTIFY_DRONE_DESC, Icon = HexagonSubsystems::9)
+		UnlockTag(DroneWeapon)
 	State: Initial
 		Narrative: #A_GUARDIAN_SCANNED
 		Choice: RemnantArmor
 		Choice: RemnantShields
-		Model: Flagship
-		Material: Flagship
+		Choice: RemnantComputers
+		Choice: DroneWeapons
+		Model: TyrantFlagLarge
+		Material: TyrantMedium
 		Choice: Reactivate

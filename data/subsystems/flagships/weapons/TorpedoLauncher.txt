@@ -1,6 +1,6 @@
 Subsystem: TorpedoLauncher
-	Name: Torpedo Launcher
-	Description: Launches massive, slow-moving, guided bombs. These bombs explode in an area around their target.
+	Name: #S_TORPEDO
+	Description: #S_TORPEDO_DESC
 	BaseColor: #7946f9
 	TypeColor: #7946f9
 	Picture: SubsystemButtonArt::4
@@ -14,8 +14,8 @@ Subsystem: TorpedoLauncher
 	Size := HexSize * Hexes
 	Range := Size + 1200
 	Damage := Size * 12
-	Reload := 25.0
-	Speed := max(40, Range / 120)
+	Reload := 25.0 * (1.0 + Size/512)
+	Speed := max(40, Range / 90)
 	Tracking := 1.5
 	Radius := 4.0 + (log(Size) / log(2) * 6.0)
 	SupplyCost := Size * 1.75

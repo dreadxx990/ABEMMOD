@@ -2,6 +2,9 @@ Subsystem: StationHull
 	Tags: DefaultUnlock, NoCore, HullSystem, Ability:ScuttleDerelict
 	Hull: Station
 	EvaluationOrder: -100
+	DamageOrder: -100
+	
+	Effect: DefensiveMatrixDamage
 	
 	HexLimit := 160
 	GridWidth := 28
@@ -11,7 +14,9 @@ Subsystem: StationHull
 	Ship.HexSize := ShipSize / HexLimit
 
 	Repair := (ShipSize / HexLimit) * 8
-
+	// Dummy for design stats - actual baseline range is in ABEM_data.
+	SensorRange := 500
+	
 	OnCheckErrors: designs::checkGlobalDesign
 
 	Hex.LaborCost := 0.1 * 0.5 * ShipSize
@@ -26,8 +31,13 @@ Subsystem: StationHull
 	Assert: Ship.Command > 0
 		Message: #ERROR_NEED_CONTROL
 
+	RequirePrayer := 0
+	HasSinew := 0
+	Assert: (RequirePrayer == 0) || (Sum.Prayer > 0)
+		Message: #ERROR_NEED_PRAYER
+
 	AddShipModifier: BuildCostFactor(0.75)
-	AddShipModifier: MaintCostFactor(0.20)
+	AddShipModifier: !tag/StaticMaintenance::MaintCostFactor(0.20)
 	AddShipModifier: LaborCostFactor(0.3)
 	AddShipModifier: SupportCapacityFactor(0.5)
 	AddShipModifier: HpFactor(3.5)
@@ -39,3 +49,4 @@ Subsystem: StationHull
 	AddShipModifier: FireArcFactor(2.0)
 	AddShipModifier: TrackingFactor(2.0)
 	AddShipModifier: DamageFactor(1.2)
+	AddShipModifier: SensorFactor(1.0)

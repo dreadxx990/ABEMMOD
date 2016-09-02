@@ -1,10 +1,10 @@
 Subsystem: ResupplyModule
-	Name: Resupply Module
+	Name: #S_RESUPPLYMODULE
 	BaseColor: #683db8
 	TypeColor: #683db8
 	Elevation: 2
 
-	Tags: Category:Equipment, DefaultUnlock
+	Tags: Category:Equipment
 	Hull: Station
 
 	Size := HexSize * Hexes

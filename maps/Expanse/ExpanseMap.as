@@ -10,6 +10,7 @@ import object_creation;
 import ship_groups;
 import map_systems;
 import statuses;
+from remnant_designs import spawnRemnantFleet, loadRemnantDesigns;
 #section all
 
 enum MapSetting {
@@ -66,7 +67,7 @@ class ExpanseMap : Map {
 
 	void placeSystems() {
 		//Generate remnant homeworld
-		loadMap(resolve("maps/Expanse/coreMap.txt")).generate(this);
+		loadMap("maps/Expanse/coreMap.txt").generate(this);
 
 		//Generate base clusters
 		double spacing = modSpacing(getSetting(M_SystemSpacing, DEFAULT_SPACING));
@@ -287,78 +288,6 @@ class ExpanseMap : Map {
 		}
 	}
 
-	array<const Design@> flagships;
-	array<const Design@> supportShips;
-
-	const Design@ getDesignOfSize(array<const Design@>@ remnants, int size, uint type) {
-		//Find existing designs at this size
-		array<const Design@> designs;
-		for(uint i = 0, cnt = remnants.length; i < cnt; ++i) {
-			if(int(remnants[i].size) == size)
-				designs.insertLast(remnants[i]);
-		}
-
-		if(designs.length == 0 || randomd() < 1.0/double(designs.length)) {
-			//Create a new design of this type
-			Designer designer;
-			
-			if(type == DT_Flagship && randomd() < 0.05) {
-				designer.prepare(DesignType(type), size * 3, Creeps, "Defense");
-				designer.weaponCount = 8;
-				designer.support = false;
-			}
-			else {
-				designer.prepare(DesignType(type), size, Creeps, "Defense");
-			}
-			
-			auto@ dsg = designer.design(128);
-			if(dsg !is null) {
-				string name = "Remnant "+dsg.name;
-				uint try = 0;
-				while(Creeps.getDesign(name) !is null) {
-					name = "Remnant "+dsg.name + " ";
-					appendRoman(++try, name);
-				}
-				dsg.rename(name);
-
-				Creeps.addDesign(Creeps.getDesignClass("Defense"), dsg);
-				remnants.insertLast(dsg);
-			}
-			return dsg;
-		}
-		else {
-			return designs[randomi(0, designs.length-1)];
-		}
-	}
-
-	Ship@ createRemnantFleet(const vec3d& position, int size) {
-		const Design@ dsg = getDesignOfSize(flagships, size, DT_Flagship);
-		if(dsg is null)
-			return null;
-
-		Ship@ leader = createShip(position, dsg, Creeps, free=true, memorable=true);
-		leader.setAutoMode(AM_RegionBound);
-		leader.sightRange = 0;
-
-		uint supports = dsg.total(SV_SupportCapacity);
-		if(supports != 0) {
-			uint supportTypes = randomd(1, 4);
-			for(uint n = 0; n < supportTypes; ++n) {
-				uint supportCount = randomd(5,50);
-				int supportSize = floor(double(supports) / double(supportTypes) / double(supportCount));
-
-				if(supportSize > 5)
-					supportSize = floor(double(supportSize) / 5.0) * 5;
-				const Design@ sup = getDesignOfSize(supportShips, supportSize, DT_Support);
-				if(sup !is null) {
-					for(uint i = 0; i < supportCount; ++i)
-						createShip(leader.position, sup, Creeps, leader, free=true);
-				}
-			}
-		}
-		return leader;
-	}
-
 	void createRemnant(SystemDesc@ system, double size, ExpanseSystem@ es = null) {
 		int fleetSize = ceil(size / double(es.defenders.length + es.queuedFleets) / 25.0) * 25;
 
@@ -367,7 +296,7 @@ class ExpanseMap : Map {
 		pos.x += offset.x;
 		pos.z += offset.y;
 
-		auto@ ship = createRemnantFleet(pos, fleetSize);
+		auto@ ship = spawnRemnantFleet(pos, fleetSize, 0.4);
 		if(es !is null && ship !is null) {
 			es.defenders.insertLast(ship);
 			if(es.queuedFleets > 0)
@@ -450,7 +379,7 @@ class ExpanseMap : Map {
 				bool defended = false;
 				for(uint n = 0, ncnt = es.defenders.length; n < ncnt; ++n) {
 					auto@ defender = es.defenders[n];
-					if(defender !is null && defender.valid) {
+					if(defender !is null && defender.valid && defender.owner is Creeps) {
 						defended = true;
 						break;
 					}
@@ -502,8 +431,6 @@ class ExpanseMap : Map {
 
 			vec3d pos = quaterniond_fromAxisAngle(vec3d_up(), ang) * vec3d_front(new.radius) + new.origin;
 			pos.y = es.system.position.y;
-			if(!new.flatten)
-				pos.y += randomd(-new.spacing*0.5, new.spacing*0.5);
 
 			trackSystems.insertLast(new);
 
@@ -548,16 +475,6 @@ class ExpanseMap : Map {
 		file << cnt;
 		for(uint i = 0; i < cnt; ++i)
 			file << trackSystems[i];
-
-		cnt = flagships.length;
-		file << cnt;
-		for(uint i = 0; i < cnt; ++i)
-			file << flagships[i].id;
-
-		cnt = supportShips.length;
-		file << cnt;
-		for(uint i = 0; i < cnt; ++i)
-			file << supportShips[i].id;
 	}
 
 	void load(SaveFile& file) {
@@ -569,21 +486,8 @@ class ExpanseMap : Map {
 			file >> trackSystems[i];
 		}
 
-		file >> cnt;
-		flagships.length = cnt;
-		for(uint i = 0; i < cnt; ++i) {
-			int id = 0;
-			file >> id;
-			@flagships[i] = Creeps.getDesign(id);
-		}
-
-		file >> cnt;
-		supportShips.length = cnt;
-		for(uint i = 0; i < cnt; ++i) {
-			int id = 0;
-			file >> id;
-			@supportShips[i] = Creeps.getDesign(id);
-		}
+		if(file < SV_0107)
+			loadRemnantDesigns(file);
 	}
 
 #section all

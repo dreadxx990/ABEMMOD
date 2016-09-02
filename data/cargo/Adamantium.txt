@@ -1,0 +1,4 @@
+Cargo: Adamantium
+	Name: Adamantium
+	Icon: adamantium
+	Description: #C_ADAMANTIUM_DESC

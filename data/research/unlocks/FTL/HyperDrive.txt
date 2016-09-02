@@ -1,8 +1,11 @@
 Technology: Hyperdrive
-	Name: Hyperdrive
+	Name: #R_SYS_HYPERDRIVE
 	Point Cost: 2500
 	Time Cost: 300
 	Icon: TechIcons::34
 	Description: #R_SYS_HYPERDRIVE_DESC
+	Class: Keystone
+	Color: #00c0ff
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(Hyperdrive)
 	UnlockSubsystem(Hyperdrive)

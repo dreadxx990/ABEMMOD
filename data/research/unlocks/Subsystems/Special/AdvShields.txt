@@ -1,0 +1,19 @@
+Technology: AdvShield
+	Name: #R_ADV_SHIELD
+	Point Cost: 1000
+	Time Cost: 120
+	Icon: FtlGen
+	Blurb: #R_ADV_SHIELD_BLURB
+	Description: #R_ADV_SHIELD_DESC
+	Class: Keystone
+	Color: #bf01ff
+	ModAttribute(ProgenitorTechProgress, Add, 5)
+	UnlockModule(ShieldDiffuser)
+	UnlockModule(ShieldCapacitor)
+	AddModifier(ShieldCapacityFactor(1.2))
+	SecondaryEnergyCost(1200)
+	UnlockSubsystem(ShieldRegenerator)
+	UnlockSubsystem(ShieldTransmitter)
+	UnlockSubsystem(RechargerModule)
+	UnlockTag(ShieldCharger)
+	UnlockSubsystem(DefensiveMatrix)

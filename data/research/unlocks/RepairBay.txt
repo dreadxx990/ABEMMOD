@@ -1,9 +1,0 @@
-Technology: RepairBay
-	Name: Repair Bay
-	Icon: techShipYard
-	Point Cost: 2000
-	Time Cost: 360
-	Description: #R_SYS_REPAIRBAY_DESC
-	SkipOnUnlockedSubsystem(RepairBay)
-	SecondaryMoneyCost(3000)
-	UnlockSubsystem(RepairBay)

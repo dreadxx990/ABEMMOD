@@ -1,0 +1,9 @@
+Subsystem: ABEMDummy
+  Tags: Disabled
+
+	DummySensorMult := 0
+  HullHealing := 0
+  ShieldHealing := 0
+  SupplyTransferRate := 0
+  ShieldTransferRate := 0
+  EnergyBuildCost := 0

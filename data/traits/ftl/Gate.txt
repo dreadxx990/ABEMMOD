@@ -2,12 +2,23 @@ Trait: Gate
 	Name: #TRAIT_GATE
 	Description: #TRAIT_GATE_DESC
 	Category: FTL
+	Order: 2
 
 	Icon: GuiOrbitalIcons::1
+	Color: #8ed2ff
 
 	Unique: FTL
 
-	UnlockTag(HasGate)
-	UnlockSubsystem(Gate)
-	LoadDesigns(not_hyperdrive)
-	LoadDesigns(gate)
+	UnlockSubsystem(GateModule)
+
+	LoadDesigns(ABEM_defaults/default)
+	LoadDesigns(ABEM_defaults/not_hyperdrive)
+	LoadDesigns(ABEM_defaults/gate)
+
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/not_hyperdrive))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/gate))
+
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/gate))

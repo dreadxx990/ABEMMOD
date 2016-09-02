@@ -1,11 +1,9 @@
 Subsystem: AdmiralBay
-	Name: Improved Command Deck
+	Name: #SYS_ADMIRALBAY
 	Description: #SYS_ADMIRALBAY_DESC
 	BaseColor: #c5f946
 	Picture: SubsystemButtonArt::8
 	Elevation: 5
-
-
 
 	Tags: BaseCost, Category:Control,NoBulkhead,Ability:LW
 	Tags: Ability:GDF
@@ -18,7 +16,7 @@ Subsystem: AdmiralBay
 	Size := HexSize * Hexes
 	Crew := floor(40 * Size)
 	Command := Hexes * 1
-	
+
 	BoardingStrength := 0.7 * Crew
 
 	Repair := 3 * HexSize * (Hexes-1)
@@ -28,8 +26,6 @@ Subsystem: AdmiralBay
 	Hex.Resistance := 0.2
 	Hex.HP := 36 * HexSize
 	Hex.Mass := HexSize
-
-
 
 	Effect: ABEMControlCore
 
@@ -49,7 +45,7 @@ Subsystem: AdmiralBay
 		Hex.Mass := 5 * Hex.Mass
 		Color: #5686ff
 
-	Ship.AdmiralBay := Ship.AdmiralBay + 1
-	Assert: Ship.AdmiralBay <= 1
+	AdmiralBay := 1
+	Assert: Sum.AdmiralBay <= 1
 		Unique: False
-		Message: Only one Admiral can operate from a flagship at any time, and no Admiral needs two command centers, right?! Right!
+		Message: #ERROR_ONLYONEADMIRAL

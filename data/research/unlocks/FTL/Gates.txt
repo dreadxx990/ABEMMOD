@@ -1,11 +1,12 @@
 Technology: GateTech
-	Name: Gate Technology
+	Name: #R_ORB_GATE
 	Icon: OrbitalIcons::1
 	Point Cost: 4000
 	Time Cost: 400
 	Description: #R_ORB_GATE_DESC
-	UnlockSubsystem(GateCore)
-	SkipOnUnlockedTag(HasGate)
+	Class: Keystone
+	Color: #00c0ff
+	ModAttribute(ProgenitorTechProgress, Add, 5)
+	UnlockSubsystem(GateModule)
+	SkipOnUnlockedSubsystem(GateModule)
 	SecondaryInfluenceCost(80)
-	UnlockTag(HasGate)
-	UnlockSubsystem(Gate)

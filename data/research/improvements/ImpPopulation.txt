@@ -26,12 +26,6 @@ Technology: ImpPopLvl3
 	SecondaryMoneyCost(6000)
 	ModAttribute(PopulationLevel3Mod, Add, 1)
 	ModAttribute(PopulationLevel2Mod, Add, 1)
-Technology: Housing
-	Name: Housing
-	Icon: city3
-	Point Cost: 500
-	Time Cost: 60
-	UnlockTag(Housing1)
 Technology: TileDev
 	Name: Surface Development
 	Description: Tiles Develop Faster 30%
@@ -39,3 +33,20 @@ Technology: TileDev
 	Time Cost: 60
 	Icon: DesignationIcons::10
 	ModAttribute(TileDevelopmentFactor, AddBase, 0.3)
+Technology: MechPop
+	Name: Population Matrix Enhancements
+	Description: #R_MECHPOP_DESC
+	Icon: ResourceIconsSmall::3
+	Point Cost: 1000
+	Time Cost: 300
+	SecondaryEnergyCost(1500)
+	ModAttribute(MechPopulationBuilt, Add, -5)
+Technology: InfMechPop
+	Name: (I) Improved Population Matrix
+	Description: #R_INF_MECHPOP_DESC
+	Icon: ResourceIconsSmall::3
+	Point Cost: 2000
+	Time Cost: 300
+	ResetWhenUnlocked()
+	SecondaryMoneyCost(6000)
+	ModAttribute(MechPopulationBuilt, Add, -10)

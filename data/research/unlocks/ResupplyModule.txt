@@ -1,8 +1,0 @@
-Technology: ResupplyMod
-	Name: Resupply Module
-	Point Cost: 250
-	Time Cost: 60
-	Icon: GuiOrbitalIcons::7
-	Description: #R_SYS_RESUPPLY_MODULE
-	SkipOnUnlockedSubsystem(ResupplyModule)
-	UnlockSubsystem(ResupplyModule)

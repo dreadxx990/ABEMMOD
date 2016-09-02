@@ -122,7 +122,32 @@ Material: orbital
 Material: adamantium
 	Inherit: ABEMSubsystem
 	Texture: data/images/Adamantium.png
+	
+	
+	//Artificial Resources
+Material: lvl1r
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl1Research.png
 
+Material: lvl1b
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl1Budget.png
+
+Material: lvl1d
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl1Defense.png
+	
+Material: lvl2r
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl2Research.png
+
+Material: lvl2b
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl2Budget.png
+
+Material: lvl2d
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl2Defense.png	
 
 Material: c1
 	Inherit: ABEMSubsystem
@@ -133,3 +158,24 @@ Material: c2
 Material: c3
 	Inherit: ABEMSubsystem
 	Texture: data/images/c3.png
+
+
+// Supply and shield transfer beams.
+
+Material: EnergyTransfer
+	Shader: Beam
+	Texture: data/images/sprites/laser_beam.png
+	Lighting: No
+	DepthWrite: No
+	Culling: None
+	Blend: Add
+
+Material: ShieldTransfer
+	Inherit: EnergyTransfer
+	Shader: Beam
+	Texture: data/images/sprites/beam3.png
+
+// Preparing a planet for harvesting by the Ringworlders.
+Material: PreparingHarvest
+	Inherit: ShieldTransfer
+	Texture: data/images/sprites/beam2.png

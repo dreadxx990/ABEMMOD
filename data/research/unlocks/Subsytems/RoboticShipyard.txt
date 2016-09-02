@@ -1,9 +1,0 @@
-Technology: RoboticShipyard
-	Name: Shipboard Construction
-	Description: #R_SYS_ROBOTICSHIPYARD_DESC
-	Point Cost: 400
-	Time Cost: 120
-	Icon: TechIcons::51
-	Color: #ff0739
-	SkipOnUnlockedSubsystem(RoboticShipyard)
-	UnlockSubsystem(RoboticShipyard)

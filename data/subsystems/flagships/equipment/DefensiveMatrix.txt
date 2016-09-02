@@ -1,0 +1,35 @@
+Subsystem: DefensiveMatrix
+	Name: #S_DEFENSIVEMATRIX_NAME
+	BaseColor: #145cf9
+	Picture: SLaser * #145cf9
+	Elevation: 2
+
+	Tags: BaseCost, Category:Equipment, Ability:DefensiveMatrix
+	Tags: HasInternals, ExteriorCore
+	Hull: Flagship, Station
+
+	EvaluationOrder: -10
+
+	Size := HexSize * Hexes
+
+
+	Hex.Resistance := 0.4
+	Hex.HP := 20 * HexSize
+	Hex.Mass := HexSize
+	Description: #S_DEFENSIVEMATRIX_DESC
+	Requires:
+		Command = 1
+		Power = PowerUse
+
+	DefensiveMatrixHP := 100 * Size
+	TypeColor: #145cf9
+	PowerUse := 10 * Size
+	HasDefensiveMatrix := 1
+	Assert: Sum.HasDefensiveMatrix == 1
+		Message: #ERROR_ONLY_ONE
+	Module: Core
+		Sprite: SLaser * #145cf9
+		Hex.BuildCost := Hex.BuildCost * 3
+		Hex.MaintainCost := Hex.MaintainCost * 3
+		DrawMode: 1
+	Module: Default

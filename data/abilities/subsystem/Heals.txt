@@ -1,0 +1,22 @@
+Ability: HullHeal
+	Name: #ABL_HULLHEAL
+	Description: #ABL_HULLHEAL_DESC
+	Icon: Plus
+	Range: 500
+	Target: targ = Object
+	Either(ABEM_hooks::TargetRequireCommand(targ), TargetFilterType(targ, Orbital))
+	IsToggleTarget(targ)
+	TargetFilterAllied(targ, Allow Null = True)
+	PersistentBeamEffect(targ, #078507, Tractor, Width = 5.0)
+	ABEM_hooks::HealFromSubsystem(targ, Sys.HullHealing)
+Ability: ShieldHeal
+	Name: #ABL_SHIELDHEAL
+	Description: #ABL_SHIELDHEAL_DESC
+	Icon: Plus * #00a0ff
+	Target: targ = Object
+	Range: 500
+	ABEM_hooks::HealShieldFromSubsystem(targ, Sys.ShieldHealing)
+	IsToggleTarget(targ)
+	TargetFilterAllied(targ, Allow Null = True)
+	PersistentBeamEffect(targ, #086786, Tractor, Width = 5.0)
+	ABEM_hooks::TargetRequireCommand(targ)

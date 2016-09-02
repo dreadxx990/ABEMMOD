@@ -9,8 +9,6 @@ Grid: Base
 	MillitaryResearch: 2,0
 	PolSci: -2,0
 	c1: 1,2
-	SysShipComupter: 3,0
-	ImpArmorHealth: 2,-1
 	DevDefenseIncome: 2,1
 	c2: 1,-2
 	Metallurgy: 1,-3
@@ -20,19 +18,11 @@ Grid: Base
 	DevBudget: -4,-1
 	c2: -1,2
 	FTLT: -2,3
-	DevFTLIncome: -2,4
-	ImpThrust: -3,3
-	IonEngine: -3,4
-	ImpThrust: -4,4
-	ImpThrust: -5,4
 	SysSkipDrive: -3,6
 	DevFTLIncome: -4,7
 	DevFTL: -3,7
 	Hyperdrive: -4,8
 	SS: -2,8
-	DevFTLIncome: -4,9
-	ImpThrust: -3,9
-	DevMoney: -2,6
 	DevInfluence: -3,-1
 	DevEnergyIncome: 1,4
 	PoweredArmor: 1,5
@@ -40,40 +30,20 @@ Grid: Base
 	c2: 3,-1
 	ImpSupportCap: 2,6
 	DevEnergy: 1,6
-	DevFTL: -1,10
-	DevFTLIncome: -3,10
-	GateTech: -4,11
-	FlingBeacons: -1,11
-	DevFTLIncome: -2,9
-	DevEnergy: -2,10
 	DevMoney: 1,7
 	ZeroPoint: 3,11
 	SysIonCannon: 1,8
 	SysHyperLaser: 2,9
-	ImpAllHealth: 4,0
 	c1: 6,8
-	Antimatter2: 6,9
-	c2: 6,10
 	c1: 7,10
-	ImpAoE2: 5,11
-	ImpSupportSupplyUse2: 7,11
 	c3: 7,9
-	DevEnergy: 8,9
 	c1: 9,10
-	ResearchLab: 9,11
 	ImpShieldCap: 6,7
 	ImpShieldCap: 7,8
-	ImpShieldReg: 7,7
 	ImpShieldCap2: 8,7
-	CovariantShield: 8,6
-	SysGravityEngine: -6,4
-	ImpDamageSmall: 5,0
-	CrystalineArmor: 9,8
-	ImpSupportCapSmall: 3,-2
-	c3: 4,-2
+	ImpSupportDamage: 4,-2
 	ImpAllHealth: 6,0
 	ImpFireRate: 7,1
-	ImpAllRange: 7,-1
 	ImpAllHealth: 8,0
 	DevBudgetSmall: -3,0
 	TaxCenter: -4,0
@@ -84,8 +54,8 @@ Grid: Base
 	ImpArmorDR: 6,4
 	ImpFlagDamage: 7,4
 	ImpAllRange2: 9,-1
-	ImpProjSpeed: 9,1
-	ImpFireRate: 10,-1
+	BoardingParty: 9,1
+	ImpSpread: 10,-1
 	ImpAllHealth2: 10,1
 	ImpAllRange: 5,-4
 	ImpSupportCapSmall: 5,-3
@@ -105,19 +75,14 @@ Grid: Base
 	ImpSupplyStorage: 9,5
 	ImpFlagDamage: 12,5
 	ImpSupportDamage: 12,-7
-	InfiniteSupport: 13,-8
 	c3: 9,7
-	ImpShieldAll: 10,7
 	c3: 15,4
 	ImpArmorHealth2: 16,4
 	ImpAllHealth: 17,4
 	ImpArmorHealth: 18,4
-	SlavePopulation: -6,2
-	ImpThrust2: -7,4
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
-	SysGravitonCondenser: 17,5
-	ImpArmorHealth2: 12,-1
+	SuperLaser: 17,5
 	ImpArmorDR2: 12,1
 	ImpAllHealth: 13,-7
 	DevInfluence: -8,-1
@@ -130,13 +95,8 @@ Grid: Base
 	DevInfluenceIncome: -6,-1
 	DevInfluenceIncome2: -9,0
 	Flak: 6,-1
-	ImpSupplyRegen: 2,5
-	c1: 5,6
-	DevEnergyIncome: 3,5
 	c3: 4,7
-	SysAntimatterGen: 4,5
-	SysShieldGen: 5,7
-	ImpAllRange: 3,7
+	CovariantShield: 5,7
 	ImpFireRate: 3,8
 	ImpSpread: -1,4
 	DevInfluenceIncome2: -7,0
@@ -148,23 +108,16 @@ Grid: Base
 	Flagship3: 14,4
 	ImpSupplyUse: 5,2
 	c1: -2,-3
-	PlanetDev: -2,-4
 	c1: 1,-4
 	c2: 2,-4
-	ImpFactoryLabor: 0,-5
 	ImpAllHealth: 2,-5
-	ImpFactoryLabor: 0,-6
-	ImpCivConstructionRate: 1,-6
 	ImpArmorHealth: 2,-6
 	DevEnergyIncome: 3,10
 	ImpEnergyStorage: 2,3
-	DevFTLIncome: -3,5
-	ImpTileDevelopment: -3,-4
 	ImpAllHealth: 3,-7
 	ImpArmorDR2: 3,-8
 	DevCultivation: -5,-4
 	ImpArmorHealth: 2,-8
-	ImpAllHealth: 1,-7
 	SysNeutronArmor: 3,-9
 	ModBulkhead: 3,-6
 	Support: 6,-5
@@ -172,11 +125,7 @@ Grid: Base
 	SysCloakPlating: 0,4
 	ImpAllHealth2: 4,-10
 	QuantumArmor: 4,-11
-	NanoArmor: 1,-9
 	ImpArmorHealth: 1,-10
-	c2: 2,-10
-	c1: 3,-10
-	Further Development: 2,-11
 	EngBay: 4,-7
 	c1: -1,-7
 	ImpFactoryLabor2: -1,-8
@@ -188,15 +137,9 @@ Grid: Base
 	OrbitalEnhancement: -2,-6
 	ImpFlagDamage: 2,10
 	VoidRay: 1,11
-	Matter Disruptor: 0,-11
-	Housing: -4,-4
-	ImpPopLvl2: -5,-5
 	ImpPopLvl2: -6,-5
-	ImpCivHealth: -4,-3
-	ImpDecaySpeed: -6,-6
 	ImpTileDevelopment: -5,-6
 	ImpPlanetSupport: -3,-6
-	ImpPlanetDamage: -4,-6
 	IntelFacilities: -6,-4
 	ImpPlanetSupport: -6,-7
 	OrbitalEnhancement: -4,-7
@@ -208,17 +151,159 @@ Grid: Base
 	BldPlanetaryEngine: -6,-8
 	Support3: 11,-7
 	ImpSupplyStorage: 2,2
-	ImpSupportSupplyUse: 2,4
-	ImpSupplyStorage: 4,4
 	DualMount: 6,1
 	DevDefenseIncome: -3,-8
 	ImpPlanetSupport: -4,-9
 	OrbitalEnhancement: -4,-10
 	Senate: -6,0
-	BoardingParty: 9,0
 	SysMuonCannon: 0,6
 	ImpDamage: 14,-1
 	ImpDamage: 11,0
 	ImpArmorHealth: 14,1
 	Flagship4: 19,4
 	Support4: 14,-7
+	OrbStarForge: -3,-10
+	OrbRingworld: -9,-7
+	ImpSpread: 0,7
+	ModAugmentReload: 7,-1
+	ModAugmentDamage: 12,-1
+	ImpArmorHealth: 5,-12
+	NanoArmor: -3,-11
+	ImpArmorHealth: 5,0
+	ImpEnergyStorage: 6,6
+	OrbArtificialPlanetoid: -7,-9
+	ImpAllHealth: -8,-9
+	ImpAllHealth: -8,-8
+	ImpAoE: 15,-1
+	ImpAoE: 7,-2
+	SysLiquidArmor: 0,-11
+	ImpEnergyStorage2: 9,11
+	ResearchLab: 8,9
+	c2: 9,8
+	c3: -4,6
+	c2: -6,7
+	ImpDamage: 9,0
+	ImpShieldCap2: 10,7
+	ImpShieldReg2: 11,8
+	ImpShieldCap2: 12,8
+	ImpArmorHealth: 0,-5
+	ImpTracking: -2,5
+	ImpProjSpeed: -1,6
+	ImpProjSpeed2: 0,8
+	ImpFlagDamage2: 16,5
+	DePlanet: -4,-4
+	ImpPlanetSupport: -4,-5
+	BldMegacity: -5,-8
+	c3: -3,3
+	ImpThrust: -4,3
+	IonEngine: -5,3
+	SlavePopulation: -5,0
+	ImpThrust: -6,3
+	c2: 2,-10
+	c1: 3,-10
+	ImpProjSpeed: 0,5
+	Housing: -5,-5
+	DevFTLIncome: -3,5
+	ImpAllRange: -2,4
+	ModAugmentSupply: 4,-1
+	DevEnergy: -5,6
+	AdvShield: 7,7
+	CompositeArmor: 1,-6
+	ImpAllHealth: 1,-7
+	DevEnergy: 2,4
+	SysShieldGen: 2,5
+	ImpShieldCap: 3,5
+	SysAntimatterGen: 4,5
+	c1: 5,6
+	PoweredArmor: 1,-9
+	ImpShieldReg: 8,6
+	ImpShieldReg: 11,7
+	ImpShieldReg: 8,8
+	ImpThrust: -9,3
+	ImpDamageSmall: 3,0
+	SysShipComupter: 4,0
+	ImpSupportCap: 2,-1
+	ImpAllRange2: 1,12
+	ImpFactoryLabor: 0,-6
+	ImpThrust2: -8,3
+	SysGravityEngine: -7,3
+	OrbVacuumTelescope: -10,3
+	DevMoney: 2,-11
+	ImpProjSpeed: -1,7
+	ModAugmentSupply: 0,9
+	DevFTLIncome: -5,9
+	DevFTL: -4,9
+	GateTech: -5,11
+	DevFTL: -2,10
+	FlingBeacons: -3,11
+	DevFTLIncome: -3,9
+	DevFTL: -2,9
+	OrbitalEnhancement: -5,10
+	ProgenitorScience: -17,-4
+	c2: -17,-5
+	c1: -18,-5
+	c3: -18,-4
+	c2: -18,-3
+	c1: -17,-3
+	c3: -16,-4
+	ProgenitorShield: -16,-6
+	ProgenitorArmor: -18,-6
+	Recall: -18,-2
+	c1: -17,-7
+	c2: -18,-7
+	DroneWeapon: -17,-8
+	ControlChair: -15,-4
+	ProgenitorComputer: -15,-6
+	c3: -15,-5
+	ImpEnergyStorage2: -19,-4
+	ProgenitorSolarOrbital: -20,-4
+	ImpEnergyStorage2: -21,-3
+	DevEnergyIncome2: -21,-5
+	SysConstructionBay: -5,-11
+	c3: -6,-11
+	ImpAllHealth: -7,-11
+	ImpCivHealth: -6,-12
+	SysOreProcessor: -7,-12
+	ImpCivConstructionRate2: -4,-12
+	KeyBuildCost: -3,-12
+	ImpAllHealth: 0,-10
+	ImpArmorHealth: -1,-11
+	CrystalineArmor: 2,-12
+	c1: 6,-7
+	SupportReactive: 6,-8
+	ImpSupportDamage2: 7,-8
+	SysShieldHardener: 6,9
+	ModQuantumBattery: 3,7
+	Antimatter2: 7,11
+	c2: 7,12
+	c1: 8,12
+	ImpAoE2: 6,13
+	ImpSupportSupplyUse2: 8,13
+	ImpSpread2: 5,10
+	PrecisionMod: 5,11
+	c2: -2,-12
+	RepairBay: -2,-13
+	c1: 0,-12
+	c3: -1,-13
+	KeyRailgunKnockback: 8,2
+	KeyEmergencyShields: 12,7
+	SysEmergencySupplies: 4,4
+	HDSupply: 5,-11
+	SysSelfDestruct: 7,-3
+	c3: -7,7
+	SSG: -8,7
+	SysGravitonCondenser: -7,8
+	MatterDisruptor: -6,8
+	PowerPlant: -7,-6
+	ImpCivConstructionRate: -6,-6
+	ImpDecaySpeed: -7,-5
+	ResupplyMod: -8,-5
+	ImpSupplyUse2: 0,10
+	SupplyTransfer: -1,11
+	PlanetDev: -3,-3
+	ImpTileDevelopment: -4,-3
+	ImpCivHealth: -5,-3
+	OrbitalThruster: -3,-5
+	ArmoredSensors: 0,-8
+	TachyonSensor: -6,5
+	SensorProcessingNode: -7,-3

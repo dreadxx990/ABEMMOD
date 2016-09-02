@@ -1,0 +1,26 @@
+Subsystem: CargoStorage
+	Name: #S_CARGO_STORAGE
+	Description: #S_CARGO_STORAGE_DESC
+	BaseColor: #91692c
+	Elevation: 1
+
+	Tags: DefaultUnlock, ScaledCost, NonContiguous, NoCore, HasInternals, Category:Manufacturing, StaticMaintenance
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	CargoStorage := Size * 5
+
+	Hook: AddCargoStorage(CargoStorage)
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+	Hex.Mass := HexSize * 3
+
+	Hex.LaborCost := 0.5 * HexSize
+	Hex.BuildCost := 0.5 * HexSize
+	Hex.MaintainCost := HexSize / 10
+
+	Hook: AddPermanentStatus(CanGiveCargo)
+	Hook: AddPermanentStatus(CanTakeCargo)
+	Module: Default
+		Sprite: SupplyStorage * #91692c

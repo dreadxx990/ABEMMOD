@@ -1,11 +1,11 @@
 Subsystem: SupportQuantumArmor
-	Name: Quantum Armor
+	Name: #S_QUANTUM_ARMOR
 	Description: #S_QUANTUM_ARMOR_DESC
 	BaseColor: #37b306
 	Picture: SubsystemButtonArt::0
 	Elevation: 1
 
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor, FauxExterior
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, FauxExterior, ExternalSpace
 	Tags: NoWall, Category:Armor
 	Hull: Support
 
@@ -20,7 +20,7 @@ Subsystem: SupportQuantumArmor
 	Hex.Mass := 2.5 * HexSize
 
 	Hex.BuildCost := 1.5 * HexSize
-	Hex.LaborCost := 0.30 * HexSize
+	Hex.LaborCost := 1 * HexSize
 
 	DamageResist := ShipSize / 19.0
 	Effect: DamageResist

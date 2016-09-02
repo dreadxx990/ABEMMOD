@@ -4,23 +4,26 @@ Subsystem: IonEngine
 	BaseColor: #f9c846
 	TypeColor: #f9c846
 	Picture: SubsystemButtonArt::9
+	Elevation: 0
 
-	Tags: BaseCost, Category:Propulsion, NoBackWall
-	Tags: ExteriorCore,Engine, GivesThrust, HasInternals
+	Tags: BaseCost, Category:Propulsion, NoBackWall, TurnToThrust
+	Tags: ExteriorCore, Engine, GivesThrust, HasInternals
 	Hull: Flagship
 
 	OnCheckErrors: designs::checkCoreFacingBackwards
 
 	Size := HexSize * Hexes
-	Thrust := min(25 * Size^1.05, 40*Size)
+	Thrust := 22 * Size
+	TurnThrust := 2.0 * Size
+	PowerUse := 1.5 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2
-	Hex.HP := 22* HexSize
+	Hex.HP := 18 * HexSize
 
 	Requires:
 		Command = 1
-		Power = 1.5 * Size
+		Power = PowerUse
 
 	Module: Default
 

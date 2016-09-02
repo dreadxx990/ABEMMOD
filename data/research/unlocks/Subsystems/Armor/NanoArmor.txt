@@ -1,0 +1,14 @@
+Technology: NanoArmor
+	Name: #R_NANO_ARMOR
+	Class: Unlock
+
+	Point Cost: 1800
+	Time Cost: 360
+
+	Icon: NanoArmor
+	Color: #676210
+	Description: #R_NANO_ARMOR_DESC
+
+	ModAttribute(ProgenitorTechProgress, Add, 5)
+	SkipOnUnlockedSubsystem(NanoArmor)
+	UnlockSubsystem(NanoArmor)

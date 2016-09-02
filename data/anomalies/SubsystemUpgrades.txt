@@ -1,8 +1,9 @@
 Anomaly: SubsystemsUpgrade
-	Name: Equipment Stash
+	Name: #A_EQUIPMENTSTASH
 	Frequency: 0
-	Model: Research_Station
-	Material: ResearchStation
+	Model: Depot
+	Material: VolkurGenericPBR
+	Description: #A_ERROR_DESC
 	Option: Weapons
 		Icon: FusionTorpedo
 		Description: #A_EQUIPMENTSTASH_WEAPONS
@@ -21,9 +22,9 @@ Anomaly: SubsystemsUpgrade
 		AddModifier(tag/IsArmor::HpFactor(1.15))
 	State: SubsystemUpg
 		Narrative: #A_EQUIPMENTSTASH_NARRATIVE
-		
-		Model: Research_Station
-		Material: ResearchStation
+
+		Model: Depot
+		Material: VolkurGenericPBR
 		Choice: Armor
 		Choice: Engines
 		Choice: Supply

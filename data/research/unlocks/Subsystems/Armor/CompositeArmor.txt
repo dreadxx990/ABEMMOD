@@ -1,0 +1,14 @@
+Technology: CompositeArmor
+	Name: #R_COMPOSITE_ARMOR
+	Class: Unlock
+
+	Point Cost: 500
+	Time Cost: 180
+
+	Icon: CompositeArmor
+	Color: #676210
+	Description: #R_COMPOSITE_ARMOR_DESC
+
+	ModAttribute(ProgenitorTechProgress, Add, 2.5)
+	SkipOnUnlockedSubsystem(CompositeArmor)
+	UnlockSubsystem(CompositeArmor)

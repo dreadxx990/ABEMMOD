@@ -1,6 +1,6 @@
 Building: DefenseFactory
-	Name: Command Center
-	Sprite: DesignationIcons::3
+	Name: #B_DEFENSEFACTORY
+	Sprite: orbital
 	Base Cost: 300
 	Size: 2x2
 	Tile Cost: 100
@@ -9,5 +9,6 @@ Building: DefenseFactory
 	Build Time: 250
 	Category: Military
 	Description: #B_DEFENSEFACTORY_DESC
+	ABEM_sensors::AddSightModifier(AddedRange = 25)
 	AddResource(Defense, 2)
 	AddFleetCommand(128)

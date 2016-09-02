@@ -1,7 +1,0 @@
-Technology: Matter Disruptor
-	Name: Matter Disruptor
-	Point Cost: 1000
-	Time Cost: 120
-	Icon: WaveEmitter
-	Description: #S_MATTERDISRUPTOR_DESC
-	UnlockSubsystem(MatterDisruptor)
